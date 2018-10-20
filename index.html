@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Neighborhood Map App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="state">
+            <h1 data-bind="text: cityName"></h1>
+        </div>
+        <div id="menu">
+            <div id="content">
+                <div id="listItems">
+                    <h2 data-bind="text: listTitle"></h2>
+                    <ul data-bind="foreach: locationNames1">
+                        <li data-bind="text: $data , click: $parent.animateMarker"></li>
+                    </ul>
+                </div>
+                <select data-bind="options: locationNames, optionsCaption: 'Select a place...', value: filterValue, click: makeFilter"></select>
+                <div id="nameFilter">
+                    <p>Filter by nation</p>
+                    <input data-bind="value: nameFilter" placeholder="Enter name of a place,state,country to search" size="35" style="height:30px;font-size: 15px;" id="nameSearch">
+                </div>
+                <div id="clickButton">
+                    <button data-bind="click: searchTheMap" style="height: 50px;width: 100px;">Go</button>
+                </div>
+                
+
+            </div>
+            <div id="map"></div>
+            <script src="./js/app.js"></script>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyC1OJV-orwAnloDiyO1lSE0oa2K9jBzQ58&v=3&callback=initMap
+        " async defer onerror="mapError()">
+    </script>
+</body>
+
+</html>
