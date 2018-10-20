@@ -9,5 +9,5 @@ This app helps to go to any place in the world by just entering the name of the 
 	Wikpedia API
 
 # Getting started :-
+Click on this [LINK](https://github.com/shivendrarox/map-app) to download the app.
 Get the full project and open the index.html file in a chrome or firefox to see app in action.
-Click on this [LINK]() to download the app.
